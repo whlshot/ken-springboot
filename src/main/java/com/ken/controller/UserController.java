@@ -17,6 +17,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @PostMapping("/save")
+    public User saveUser(@RequestBody User user) {
+        return userService.saveUser(user);
+    }
+
+    @GetMapping("/get/{id}")
+    public User getUser(@PathVariable int id) {
+        return null;
+    }
+
     @PostMapping("/page/{pageIndex}/{pageSize}")
     public ResultInfo<User> pageUser(@RequestBody User user, @PathVariable int pageIndex, @PathVariable int pageSize) {
         PageParam pageParam = CommonUtil.pageParam(pageIndex, pageSize);
