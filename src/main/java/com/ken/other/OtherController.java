@@ -59,4 +59,9 @@ public class OtherController {
     public String testCondition() {
         return listService.showListCmd();
     }
+
+    @GetMapping("/testException")
+    public String testException() {
+        throw new RuntimeException("哎哟，出错了");
+    }
 }
