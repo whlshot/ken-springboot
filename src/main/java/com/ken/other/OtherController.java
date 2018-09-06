@@ -1,8 +1,10 @@
 package com.ken.other;
 
 import com.ken.other.aware.AwareService;
+import com.ken.other.condition.ListService;
 import com.ken.other.el.ElConfig;
 import com.ken.other.event.DemoPublisher;
+import com.ken.other.thread.AsyncTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,12 @@ public class OtherController {
     @Autowired
     private AwareService awareService;
 
+    @Autowired
+    private AsyncTaskService asyncTaskService;
+
+    @Autowired
+    private ListService listService;
+
     @GetMapping("/testEL")
     public String testEl() {
         return elConfig.outputResource();
@@ -38,4 +46,17 @@ public class OtherController {
         return "success";
     }
 
+    @GetMapping("/testAsync")
+    public String testAsync() {
+        for (int i = 0; i < 10; i++) {
+            asyncTaskService.executeAsyncTask(i);
+            asyncTaskService.executeAsyncTaskPlus(i);
+        }
+        return "success";
+    }
+
+    @GetMapping("/testCondition")
+    public String testCondition() {
+        return listService.showListCmd();
+    }
 }
