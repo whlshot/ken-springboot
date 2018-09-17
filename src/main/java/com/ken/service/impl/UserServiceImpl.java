@@ -28,4 +28,9 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public Integer getUserState(String userName) {
+        return null;
+    }
+
 }

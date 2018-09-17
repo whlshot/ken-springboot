@@ -9,4 +9,6 @@ public interface UserService {
     PageInfo<User> page(User user, PageParam pageParam);
 
     User saveUser(User user);
+
+    Integer getUserState(String userName);
 }

@@ -13,7 +13,7 @@ public class User {
     private String imgUrl;
     private Date birthday;
     private String salt;
-    private Integer enable;//是否启用
+    private Integer state;//是否启用
 
     public Integer getId() {
         return Id;
@@ -87,11 +87,11 @@ public class User {
         this.salt = salt;
     }
 
-    public Integer getEnable() {
-        return enable;
+    public Integer getState() {
+        return state;
     }
 
-    public void setEnable(Integer enable) {
-        this.enable = enable;
+    public void setState(Integer state) {
+        this.state = state;
     }
 }
