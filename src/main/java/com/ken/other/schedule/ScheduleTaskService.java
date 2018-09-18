@@ -16,14 +16,15 @@ public class ScheduleTaskService {
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
+    /*
     @Scheduled(fixedRate = 5000)
     public void reportCurrentTime() {
-        System.out.println("没隔五秒执行一次 " + dateFormat.format(new Date()));
+       System.out.println("没隔五秒执行一次 " + dateFormat.format(new Date()));
     }
 
     @Scheduled(cron = "0 31 11 ? * *")
     public void fixTimeExecution() {
-        System.out.println("在指定时间 " + dateFormat.format(new Date()) + " 执行");
+      System.out.println("在指定时间 " + dateFormat.format(new Date()) + " 执行");
     }
-
+    */
 }

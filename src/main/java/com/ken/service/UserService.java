@@ -11,4 +11,6 @@ public interface UserService {
     User saveUser(User user);
 
     Integer getUserState(String userName);
+
+    User getUser(String userName);
 }
